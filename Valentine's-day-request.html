@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #ff4d4d;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #28a745;
+            color: white;
+        }
+        .no {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>K-Leigh...Will You Be My Valentine? ❤️</h1>
+        <p>I’d love to spend this special day with you! 🌹</p>
+        
+        <div class="buttons">
+            <button class="yes" onclick="redirectToWhatsApp()">Yes! 💘</button>
+            <button class="no" onclick="moveNoButton()">No 😢</button>
+        </div>
+    </div>
+
+    <script>
+        function redirectToWhatsApp() {
+            var phoneNumber = "0820972307"; // Replace with your actual phone number
+            var message = "Yes! I'd love to be your Valentine! ❤️"; // Custom message
+            var whatsappURL = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+            window.location.href = whatsappURL;
+        }
+
+        function moveNoButton() {
+            let noButton = document.querySelector('.no');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            noButton.style.position = "absolute";
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
